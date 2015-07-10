@@ -3,9 +3,8 @@ Python Pushwoosh client
 
 A simple client for the Pushwoosh push notification service.
 
-Example:
+Example::
 
-    
     from pushwoosh import Pushwoosh
     
     text = 'Hello there'
