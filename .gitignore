@@ -4,3 +4,4 @@ __pycache__/
 pushwoosh.egg-info/
 .pypirc
 dist/
+*.pyc

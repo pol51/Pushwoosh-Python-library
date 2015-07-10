@@ -2,8 +2,12 @@
 Interact with the Pushwoosh API
 """
 
-import http.client
 import json
+import six
+if six.PY2:
+    import httplib
+if six.PY3:
+    import http.client
 
 SERVER = 'cp.pushwoosh.com'
 URL = 'https://cp.pushwoosh.com/json/1.3/'
@@ -30,7 +34,10 @@ class Pushwoosh(object):
         request = json.dumps(data)
 
         # Make the request
-        conn = http.client.HTTPSConnection(SERVER)
+        if six.PY2:
+            conn = httplib.HTTPSConnection(SERVER)
+        if six.PY3:
+            conn = http.client.HTTPSConnection(SERVER)
         headers = {'Content-type': 'application/json'}
         conn.request('POST', url, body=request, headers=headers)
         resp = conn.getresponse()
