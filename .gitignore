@@ -5,3 +5,4 @@ pushwoosh.egg-info/
 .pypirc
 dist/
 *.pyc
+build/

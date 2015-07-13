@@ -15,3 +15,7 @@ Example::
     }
     push = Pushwoosh(API_TOKEN, APP_CODE, False)
     push.create_message([message])
+
+Install it as follow::
+
+    pip install pushwoosh
