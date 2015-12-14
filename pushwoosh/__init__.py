@@ -79,3 +79,20 @@ class Pushwoosh(object):
         status, content  = self.__pwCall('createMessage', data)
         return status, content
         pass
+
+    def getTags(self, hwid):
+        """
+        Get tags values for device.
+        """
+         # Create a dictionary to hold the whole request
+        request = {}
+        request['application'] = self.appcode
+        request['auth'] = self.apitoken
+        request['hwid'] = hwid
+        data = {}
+        data['request'] = request
+
+        # Call the API
+        status, content  = self.__pwCall('getTags', data)
+        return status, content
+        pass
